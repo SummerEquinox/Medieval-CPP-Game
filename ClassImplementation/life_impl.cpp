@@ -11,7 +11,6 @@ File Definition: This file is used for implementation details of the life class.
 #include <iostream>
 
 #include "../ClassesAccess/life.h"
-// We may have an inclusion of dialouge.h here, which contains data for a future :Speak() method.
 
 // Primary namespace declaration
 using namespace std;

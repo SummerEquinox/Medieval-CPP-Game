@@ -29,7 +29,7 @@ public:
     Life();
     Life(int, int, int, bool, string, string);
 
-    //getters
+    // getters
     int gHealth();
     int gDamage();
     int gDefense();
@@ -38,7 +38,7 @@ public:
     string gType();
     string gName();
 
-    //setters
+    // setters
     void sHealth(int _amt);
     void sDamage(int _amt);
     void sDefense(int _amt);
