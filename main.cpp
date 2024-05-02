@@ -8,12 +8,16 @@ File Definition: This file represents the actual mechanical gameplay code. Most 
 
 // Files
 #include <iostream>
+#include <string>
 
 #include "ClassesAccess/life.h"
+#include "ClassesAccess/location.h"
 #include "GameplayAbstraction/game_functions_1.cpp"
 
 // Set default namespace
 using namespace std;
+
+// We will consider an additionally, externally hosted namespace that contains the game's location universe
 
 
 // Main

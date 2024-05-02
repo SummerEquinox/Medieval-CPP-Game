@@ -15,9 +15,6 @@ File Definition: This file is used for implementation details for the location c
 // Primary namespace declaration
 using namespace std;
 
-// Constants
-static const int LocationsLinkedLength = LocationsInformation::max_linked;
-
 
 // constructors //
 Location::Location(string _name, string _desc, int _max_entities, string _linked_locations[])
@@ -25,7 +22,10 @@ Location::Location(string _name, string _desc, int _max_entities, string _linked
     Name = _name;
     Description = _desc;
     MaxEntitiesAllowed = _max_entities;
-    LocationsLinkedTo[0] = _linked_locations[0]; // GROSS! Needs further testing...
+    
+    for (int num = 0; num < 4; num++) {
+        LocationsLinkedTo[num] = _linked_locations[num];
+    }
 }
 
 // getters //
@@ -54,14 +54,18 @@ void Location::sMaxEntities(int _max){
 void Location::DisplayLinkedLocations(){
     cout << Name << " is linked to:" << endl;
 
-    for (int loc = 0; loc < LocationsLinkedLength; loc++) {
+    for (int loc = 0; loc < 4; loc++) {
         cout << loc << ") -> " << LocationsLinkedTo[loc] << endl;
     }
 }
 
-bool Location::IsLinkedTo(string _needle){
-    // Here we use linear search considering how small the array size is.
+bool Location::IsLinkedTo(string needle){
+    bool found = false;
 
-    // We will overload this later.
-    // I want to make sure everything else works how I want it to first.
+    for (int loc = 0; loc < 4; loc++) {
+        if (LocationsLinkedTo[loc] == "None") { break; }
+        if (LocationsLinkedTo[loc] == needle) { found = true; break; }
+    }
+
+    return found;
 }

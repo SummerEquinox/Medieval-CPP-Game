@@ -13,13 +13,6 @@ File Definition: This file is used to define the location data class.
 // Primary namespace declaration
 using namespace std;
 
-// Constants
-static const int maximum_linked_locations = 4;
-
-// Information namespace
-namespace LocationsInformation{
-    int max_linked = maximum_linked_locations;
-}
 
 // Class Definition
 class Location {
@@ -28,7 +21,7 @@ private:
     string Description;
     int MaxEntitiesAllowed;
 
-    string LocationsLinkedTo[maximum_linked_locations];
+    string LocationsLinkedTo[4]; // Hard limit on 4 of linking locations together.
 
 public:
     // constructors
