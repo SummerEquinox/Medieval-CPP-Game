@@ -16,6 +16,11 @@ using namespace std;
 // Constants
 static const int maximum_linked_locations = 4;
 
+// Information namespace
+namespace LocationsInformation{
+    int max_linked = maximum_linked_locations;
+}
+
 // Class Definition
 class Location {
 private:
@@ -27,7 +32,7 @@ private:
 
 public:
     // constructors
-    Location(string, string, int, string[maximum_linked_locations]);
+    Location(string, string, int, string[]);
 
     // getters
     string gName();
@@ -35,10 +40,11 @@ public:
     int gMaxEntities();
 
     // setters
-
-    //--> Left off here
-    //--> Setup rest of this, begin game cycle.
+    void sName(string);
+    void sDesc(string);
+    void sMaxEntities(int);
 
     // methods
-
+    void DisplayLinkedLocations();
+    bool IsLinkedTo(string);
 };
