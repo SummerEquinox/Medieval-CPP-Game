@@ -12,18 +12,33 @@ File Definition: This file represents the actual mechanical gameplay code. Most 
 
 #include "ClassesAccess/life.h"
 #include "ClassesAccess/location.h"
+
 #include "GameplayAbstraction/game_functions_1.cpp"
-
-// Set default namespace
-using namespace std;
-
-// We will consider an additionally, externally hosted namespace that contains the game's location universe
+#include "GameplayAbstraction/universe_locations.cpp"
 
 
 // Main
 int main()
 {
     Life PlayerCharacter(100, 25, 10, 1.05, "PlayerCharacter", CollectPlayerName());
+    Location PlayerLocation = Universe::Town;
+
+    std::GameIntroduction();
+
+    //
+    // //
+    while (PlayerCharacter.gHealth() > 0)
+    {
+        // Primary game life cycle loop, which is fully IO dependant.
+
+        std::ProvideInformationAtStartTurn(PlayerLocation);
+        std::string Command = std::CollectPlayerCommand();
+    }
+    // //
+    //
+
+    std::cout << endl << "You have died, GAME OVER." << 
+    endl << "please restart the program to play again!";
 
     return 0; // OS success exit code
 }

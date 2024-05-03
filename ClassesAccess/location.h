@@ -6,10 +6,6 @@ File: location.h
 File Definition: This file is used to define the location data class.
 */
 
-
-// Files
-#include <string>
-
 // Primary namespace declaration
 using namespace std;
 

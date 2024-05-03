@@ -7,9 +7,6 @@ File Definition: This file is used for definition and life class accessibility.
 */
 
 
-// Files
-#include <string>
-
 // Primary namespace declaration
 using namespace std;
 
