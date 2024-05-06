@@ -48,5 +48,3 @@ namespace std{
     }
 
 }
-
-// Maybe this isn't industry standard - but I am learning.

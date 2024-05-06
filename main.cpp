@@ -14,6 +14,7 @@ File Definition: This file represents the actual mechanical gameplay code. Most 
 #include "ClassesAccess/location.h"
 
 #include "GameplayAbstraction/game_functions_1.cpp"
+#include "GameplayAbstraction/game_functions_2.cpp"
 #include "GameplayAbstraction/universe_locations.cpp"
 
 
