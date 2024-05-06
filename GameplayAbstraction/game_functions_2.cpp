@@ -38,6 +38,14 @@ namespace std{
                 break;
             }
         }
+
+        if (plr.gHealth() > 0){
+            cout << endl << "Your stats have improved from this battle..." << endl;
+
+            plr.sHealth(100);
+            plr.sDamage(plr.gDamage() + 5);
+            plr.sMagic(plr.gMagic() + .05);
+        }
     }
 
 }

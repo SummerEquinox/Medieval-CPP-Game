@@ -34,6 +34,12 @@ int main()
 
         std::ProvideInformationAtStartTurn(PlayerLocation);
         std::string Command = std::CollectPlayerCommand();
+
+        if (Command == "whereami"){
+            // This command we display the location description.
+        }
+
+        // We will create an inventory of enemies for each game location, for a combat command that initiates a combat sequence.
     }
     // //
     //
