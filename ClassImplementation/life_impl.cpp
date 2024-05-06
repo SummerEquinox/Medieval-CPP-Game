@@ -75,18 +75,15 @@ void Life::sMagic(double _amt){
 // methods //
 void Life::Attack(Life& enemy){
     int _totDmg = (Damage - enemy.gDefense());
-
-    if (_totDmg < 0){
-        _totDmg = 0;
-    }
+    if (_totDmg < 0){ _totDmg = 0; }
 
     enemy.sHealth(_totDmg * -1);
-    cout << "An attack has occured. " << _totDmg << " was done to " << enemy.Name << " by " << Name;
+    cout << endl << "An attack has occured. " << _totDmg << " was done to " << enemy.Name << " by " << Name << endl;
 
     // Here, if the enemy dies, it needs to be deleted and handled.
 };
 
 void Life::Heal(){
     Health *= Magic;
-    cout << "A heal has occured. New health for " << Name << "is " << Health;
+    cout << endl << "A heal has occured. New health for " << Name << "is " << Health << endl;
 };
