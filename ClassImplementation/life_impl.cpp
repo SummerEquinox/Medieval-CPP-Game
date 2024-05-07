@@ -74,7 +74,13 @@ void Life::sMagic(double _amt){
 
 // methods //
 void Life::Attack(Life& enemy){
+    int _rand = rand()%3+1;
+
     int _totDmg = (Damage - enemy.gDefense());
+    if (_rand == 1){_totDmg+=5;}
+    else if (_rand == 2){;}
+    else {_totDmg-=5;}
+
     if (_totDmg < 0){ _totDmg = 0; }
 
     enemy.sHealth(_totDmg * -1);
@@ -84,6 +90,6 @@ void Life::Attack(Life& enemy){
 };
 
 void Life::Heal(){
-    Health *= Magic;
-    cout << endl << "A heal has occured. New health for " << Name << "is " << Health << endl;
+    Health *= (Magic + (rand()%2+1));
+    cout << endl << "A heal has occured. New health for " << Name << " is " << Health << endl;
 };
