@@ -19,9 +19,6 @@ File Definition: This file represents the actual mechanical gameplay code. Most 
 #include "GameplayAbstraction/game_functions_2.cpp"
 #include "GameplayAbstraction/universe_locations.cpp"
 
-// Upcoming changes: overall gameplay balance, heal fixing, damage fixing, stats command.
-// Current version is first totally playable version!
-
 
 // Main
 int main()
@@ -60,6 +57,7 @@ int main()
             if (request == "Forest"){PlayerLocation = Universe::Forest;}
             else if (request == "Desert"){PlayerLocation = Universe::Desert;}
             else if (request == "Town"){PlayerLocation = Universe::Town;}
+            else if (request == "Castle"){PlayerLocation = Universe::Castle;}
 
             cin.ignore();
         }
@@ -69,6 +67,14 @@ int main()
 
             Life FoundEnemy = std::GetRandomMonster(PlayerLocation);
             std::RunCombatPhase(PlayerCharacter, FoundEnemy);
+        }
+
+        else if (Command == "map"){
+            PlayerLocation.DisplayLinkedLocations();
+        }
+
+        else if (Command == "stats"){
+            PlayerCharacter.DisplayStatistics();
         }
     }
     // //

@@ -14,9 +14,11 @@ using std::string;
 string TownConnections[4] = 
 { "Forest" , "Desert" , "None" , "None" }; // Town
 string ForestConnections[4] = 
-{ "Town" , "None" , "None" , "None" }; // Forest
+{ "Town" , "Castle" , "None" , "None" }; // Forest
 string DesertConnections[4] = 
 { "Town" , "None" , "None" , "None" }; // Desert
+string CastleConnections[4] =
+{"Forest", "None", "None", "None"};
 
 
 // Universe locations namespace
@@ -41,5 +43,12 @@ namespace Universe
         "The desert is no picnic. Entities here ruthless and very strong.",
         3,
         DesertConnections
+    );
+
+    Location Castle(
+        "Castle",
+        "The castle is a good intermediate area before entering the desert.",
+        4,
+        CastleConnections
     );
 }

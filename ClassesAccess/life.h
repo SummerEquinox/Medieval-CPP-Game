@@ -44,4 +44,6 @@ public:
     // methods
     void Attack(Life&);
     void Heal();
+
+    void DisplayStatistics();
 };

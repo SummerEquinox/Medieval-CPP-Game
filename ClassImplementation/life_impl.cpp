@@ -85,11 +85,18 @@ void Life::Attack(Life& enemy){
 
     enemy.sHealth(_totDmg * -1);
     cout << endl << "An attack has occured. " << _totDmg << " was done to " << enemy.Name << " by " << Name << endl;
-
-    // Here, if the enemy dies, it needs to be deleted and handled.
 };
 
 void Life::Heal(){
-    Health *= (Magic + (rand()%2+1));
+    Health += (Magic * (rand()%10+1));
     cout << endl << "A heal has occured. New health for " << Name << " is " << Health << endl;
+};
+
+void Life::DisplayStatistics(){
+    cout << endl << "Statistics for: " << Name << endl << endl;
+
+    cout << "Health: " << Health << endl;
+    cout << "Damage: " << Damage << endl;
+    cout << "Defense: " << Defense << endl;
+    cout << "Magic [Healing]: " << Magic << endl;
 };

@@ -15,6 +15,7 @@ namespace std{
 
     void RunCombatPhase(Life& plr, Life& enemy){
         cout << endl << "COMBAT SEQUENCE STARTING..." << endl;
+        cout << "You have encountered a: " << enemy.gName() << endl;
 
         while (true){
             // Valid combat options are: attack or heal
@@ -42,10 +43,10 @@ namespace std{
         }
 
         if (plr.gHealth() > 0){
-            cout << endl << "Your stats have improved from this battle..." << endl;
+            cout << endl << "Your stats have improved from this battle and you have fully healed..." << endl;
 
             plr.sHealth(100);
-            plr.sDamage(plr.gDamage() + 5);
+            plr.sDamage(plr.gDamage() + (rand()%5+1));
             plr.sMagic(plr.gMagic() + .05);
         }
     }
@@ -70,6 +71,11 @@ namespace std{
             if (_random == 1){return Life(100, 25, 20, 10, "Enemy", "Giant Desert Rat");}
             else if (_random == 2){return Life(125, 25, 10, 5, "Enemy", "Sand Worm");}
             else {return Life(100, 20, 15, 5, "Enemy", "Desert Bandit");}
+        }
+        else if (_hSpot == "Castle"){
+            if (_random == 1){return Life(65, 15, 15, 7, "Enemy", "Castle Knight");}
+            else if (_random == 2){return Life(70, 17, 15, 8, "Enemy", "Castle Defendor");}
+            else {return Life(80, 18, 15, 5, "Enemy", "Baby Dragon");}
         }
         else {
             Life Default = Life(25, 10, 10, 5, "Enemy", "Pit-Rat");
